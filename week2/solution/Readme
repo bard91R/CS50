@@ -1,0 +1,3 @@
+The solution was developed in the browser platform IDE50, to run it externally CS50.h would have to be included as it is not in the common includes for the compiler.
+
+The program notes obtains the frequency of the notes correctly, synthesize is not working correctly as there's a seg fault being caused when calling one of the functions, this seems to be happening when a function is called which expects a string in a formatted as fraction (x/y), however the string seems to be null all of the time. The function that sends the string was provided as part of the code, and isn;t supposed to be altered as detailed on the problem set, it may be that the inputs given through the terminal don't work correclty and a different format is needed. 
