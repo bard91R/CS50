@@ -1,0 +1,16 @@
+[
+  {
+    "accuracy": 4, 
+    "admin_code1": "MA", 
+    "admin_code2": "017", 
+    "admin_code3": "", 
+    "admin_name1": "Massachusetts", 
+    "admin_name2": "Middlesex County", 
+    "admin_name3": "", 
+    "country_code": "US", 
+    "latitude": 42.377, 
+    "longitude": -71.1256, 
+    "place_name": "Cambridge", 
+    "postal_code": "02138"
+  }
+]

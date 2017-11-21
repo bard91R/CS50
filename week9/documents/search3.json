@@ -1,0 +1,16 @@
+[
+  {
+    "accuracy": 4, 
+    "admin_code1": "CT", 
+    "admin_code2": "009", 
+    "admin_code3": "", 
+    "admin_name1": "Connecticut", 
+    "admin_name2": "New Haven County", 
+    "admin_name3": "", 
+    "country_code": "US", 
+    "latitude": 41.3184, 
+    "longitude": -72.9318, 
+    "place_name": "New Haven", 
+    "postal_code": "06511"
+  }
+]

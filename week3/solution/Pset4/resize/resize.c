@@ -67,15 +67,17 @@ int main(int argc, char *argv[])
 
     float convFactor = 1/factor;            //factor used to multiply the position number of resized to determine from which pixel the data should be pulled
 
-    //int originalColumns[bi.biWidth];
-    //int originalRows[bi.biHeight];
-    RGBTRIPLE originalMatrix[abs(bi.biWidth)][abs(bi.biHeight)];    //for some reason returns a negative value
+
+    RGBTRIPLE **originalMatrix;
+
+    originalMatrix = (RGBTRIPLE **)malloc(sizeof(RGBTRIPLE *)*abs(bi.biHeight));
 
 
+    for(int m=0;m<abs(bi.biHeight);m++){
 
-//    struct matrix* newImage = malloc(sizeof(struct dyn_array) + newFilebi.biWidth *sizeof(int), sizeof(struct dyn_array) + newFilebi.biHeight *sizeof(int));
+        originalMatrix[m] = (RGBTRIPLE *)malloc(sizeof(RGBTRIPLE)*abs(bi.biWidth));
+    }
 
-    /////////////
 
 
 
@@ -152,47 +154,13 @@ int main(int argc, char *argv[])
     }
 
 
-
-    //////////////////////////////////////////////////////////
-
-
-
-
-/*
-    // iterate over infile's scanlines
-    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
-    {
-        // iterate over pixels in scanline
-        for (int j = 0; j < bi.biWidth; j++)
-        {
-            // temporary storage
-            RGBTRIPLE triple;
-
-            // read RGB triple from infile
-            fread(&triple, sizeof(RGBTRIPLE), 1, inptr);
-
-            // write RGB triple to outfile
-            fwrite(&triple, sizeof(RGBTRIPLE), 1, outptr);
-        }
-
-        // skip over padding, if any
-        fseek(inptr, padding, SEEK_CUR);
-
-        // then add it back (to demonstrate how)
-        for (int k = 0; k < padding; k++)
-        {
-            fputc(0x00, outptr);
-        }
-    }
-*/
-
-
     // close infile
     fclose(inptr);
 
     // close outfile
     fclose(outptr);
 
+    free(originalMatrix);
 
     //free(newImage);
     // success
